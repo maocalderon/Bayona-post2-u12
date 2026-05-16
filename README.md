@@ -1,4 +1,4 @@
-# calderon-post2-u12
+# Bayona-post2-u12
 
 ![CI/CD Status](https://github.com/maocalderon/calderon-post2-u12/actions/workflows/ci.yml/badge.svg)
 
@@ -6,13 +6,13 @@
 Post-Contenido 2 — Pipeline CI/CD con GitHub Actions y Docker Hub  
 Ingeniería de Sistemas · 2026
 
----
+
 
 ## Descripción
 
 Aplicación Spring Boot con pipeline CI/CD completo implementado con GitHub Actions. El pipeline automatiza compilación, pruebas unitarias con reporte de cobertura JaCoCo, construcción de imagen Docker multi-stage y publicación en Docker Hub en cada push a `main`.
 
----
+
 
 ## Pipeline CI/CD
 
@@ -25,7 +25,7 @@ El pipeline se activa automáticamente en cada `push` o `pull_request` a la rama
 
 ### Flujo del pipeline
 
-```
+
 push a main
     │
     ▼
@@ -41,9 +41,9 @@ docker-publish
 ├── Login Docker Hub (secrets)
 ├── Extraer metadata (tags: latest + sha-<commit>)
 └── Build & push imagen multi-stage
-```
 
----
+
+
 
 ## GitHub Secrets requeridos
 
@@ -56,11 +56,9 @@ Configurar en: **Settings → Secrets and variables → Actions → New reposito
 
 > ⚠️ Nunca incluir credenciales en texto plano en el archivo YAML. Siempre usar `${{ secrets.NOMBRE }}`.
 
----
 
 ## Estructura del proyecto
 
-```
 calderon-post2-u12/
 ├── .github/
 │   └── workflows/
@@ -85,7 +83,7 @@ calderon-post2-u12/
 └── README.md
 ```
 
----
+
 
 ## Imagen Docker
 
@@ -109,7 +107,7 @@ curl http://localhost:8080/actuator/health
 | `latest` | Última imagen publicada en la rama main |
 | `sha-<commit>` | Tag con el SHA corto del commit para trazabilidad |
 
----
+
 
 ## Ejecución local
 
@@ -131,7 +129,7 @@ docker build -t calderon-app:local .
 docker run -p 8080:8080 -e SPRING_PROFILES_ACTIVE=dev calderon-app:local
 ```
 
----
+
 
 ## Commits del laboratorio
 
@@ -141,11 +139,11 @@ docker run -p 8080:8080 -e SPRING_PROFILES_ACTIVE=dev calderon-app:local
 | 2 | `ci: add JaCoCo coverage plugin and improve test suite` | JaCoCo en pom.xml, pruebas unitarias con assertThat |
 | 3 | `docs: update README with CI/CD badge, secrets guide and Docker Hub instructions` | README completo con badge, tabla de Secrets y comandos docker pull |
 
----
+
 
 ## Autor
 
 **Mauricio Calderón**  
 Ingeniería de Sistemas — Universidad de Santander (UDES)  
-Repositorio: [github.com/maocalderon/calderon-post2-u12](https://github.com/maocalderon/calderon-post2-u12)  
+Repositorio: [github.com/maocalderon/calderon-post2-u12](https://github.com/maocalderon/Bayona-post2-u12)  
 2026
